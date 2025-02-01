@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useState} from "react";
 import './App.css';
 
 function App() {
@@ -16,15 +16,12 @@ function App() {
       console.error("Error fetching riddle:", error);
     }
   };
+  
 
   const renderRiddle = (data) => {
     setRiddle(data.riddle || "No riddle available.");
     setAnswer(data.answer || "No answer available.");
   };
-
-  useEffect(() => {
-    fetchRiddle();
-  }, []);
 
   return (
     <div>
